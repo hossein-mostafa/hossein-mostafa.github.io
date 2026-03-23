@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HM // Hossein Mostafa Portfolio</title>
+<title>HM // Portfolio</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -249,7 +249,99 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:16px var(--pad);disp
 
 @media(max-width:768px){
   :root{--pad:20px}
-  .hud{flex-direction:column}.mission-grid{grid-template-columns:1fr}.mission-years{flex-direction:row;flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:24px}.mission-panel{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:24px}.year-connector{display:none}.circuit-nodes{grid-template-columns:1fr}.ach-row{grid-template-columns:1fr}.holo-body{grid-template-columns:1fr}
+
+  /* NAV */
+  nav{padding:12px 20px}
+  .nav-id{font-size:11px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:10px}
+
+  /* BOOT */
+  #boot-logo{font-size:32px}
+  #boot-lines{font-size:10px;min-height:180px}
+  #boot-enter-btn{font-size:11px;padding:12px 32px}
+
+  /* PAGES */
+  .page{padding:80px 20px 40px;height:auto;min-height:100vh}
+  .section-inner{padding:0}
+
+  /* HERO */
+  #hero{padding-top:90px}
+  .hero-contact-big{height:auto;min-height:120px;margin-bottom:8px}
+  .hero-tag{font-size:9px;letter-spacing:.12em}
+  .hero-ticker-wrap{margin:8px 0 16px}
+  .ticker-item{font-size:11px;padding:0 16px}
+
+  /* HUD */
+  .hud{flex-direction:column;gap:1px}
+  .hud-cell{min-width:100%;padding:14px 20px 20px}
+  .hud-val{font-size:28px}
+
+  /* AI STRIP */
+  .ai-builder-strip{padding:14px 16px}
+  .ai-tools-row{gap:6px}
+  .ai-tool-tag{font-size:10px;padding:4px 10px}
+
+  /* TERM */
+  .term-body{font-size:11px;padding:12px 14px}
+
+  /* CAREER */
+  .mission-grid{grid-template-columns:1fr}
+  .mission-years{flex-direction:row;flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:20px;padding-right:0;gap:4px}
+  .year-node{padding:0}
+  .year-btn{font-size:10px;padding:8px 10px;justify-content:center}
+  .year-connector{display:none}
+  .mission-panel{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:20px}
+  .holo-role{font-size:22px}
+  .holo-body{grid-template-columns:1fr}
+  .holo-meta{gap:8px}
+  .holo-co{font-size:11px}
+
+  /* CIRCUIT BOARD */
+  #circuit-board{min-height:auto}
+  .circuit-nodes{grid-template-columns:1fr;padding:16px}
+  .cnode{padding:14px}
+
+  /* ACHIEVEMENTS */
+  .ach-row{grid-template-columns:1fr}
+  .ach-block{padding:28px 20px}
+  .ach-num{font-size:52px}
+
+  /* LANG */
+  .lang-grid{gap:8px}
+  .lang-node{padding:20px 24px;min-width:120px}
+  .lang-n{font-size:18px}
+
+  /* CONNECT */
+  #contact{padding:80px 20px 40px}
+  #contact .section-inner{gap:32px}
+  .contact-big{font-size:clamp(28px,10vw,56px);text-align:center;width:100%}
+  .contact-desc{text-align:center;font-size:13px}
+  .cta-row{flex-direction:column;align-items:center;width:100%}
+  .cta{width:100%;max-width:100%;padding:16px 20px;justify-content:center}
+  .contact-status{justify-content:center;font-size:10px}
+
+  /* HIDE CURSOR ON TOUCH */
+  #cur,#cur-ring{display:none!important}
+
+  /* ARIA */
+  #aria-btn{bottom:16px;right:16px}
+  #aria-icon{width:52px;height:52px}
+  #aria-panel{width:calc(100vw - 32px);right:16px;bottom:90px}
+  #aria-messages{max-height:240px}
+}
+
+@media(hover:none)and(pointer:coarse){
+  body{cursor:auto!important}
+  #cur,#cur-ring{display:none!important}
+  a,button,span.cta{cursor:pointer!important}
+}
+  .nav-links{gap:10px}
+  .nav-links a{font-size:9px;letter-spacing:.06em}
+  .holo-role{font-size:18px}
+  .ach-num{font-size:44px}
+  .contact-big{font-size:clamp(24px,9vw,44px)}
+  #boot-lines{font-size:9px}
 }
 </style>
 </head>
