@@ -1005,7 +1005,7 @@ async function sendAria(){
   const typing=document.createElement('div');typing.className='aria-msg bot';typing.innerHTML='<div class="aria-typing-dots"><span></span><span></span><span></span></div>';msgs.appendChild(typing);msgs.scrollTop=msgs.scrollHeight;
   ariaHistory.push({role:'user',content:text});
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:ARIA_CONTEXT,messages:ariaHistory})});
+    const res=await fetch('https://aria-proxy.seensteef.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:ARIA_CONTEXT,messages:ariaHistory})});
     const data=await res.json();
     const rawReply=(data.content?.[0]?.text||"I'm having trouble connecting. Please try again!").replace(/\*\*(.*?)\*\*/g,'$1').replace(/\*(.*?)\*/g,'$1').replace(/`(.*?)`/g,'$1');
     const reply=rawReply.replace(/(https?:\/\/[^\s]+)/g,'<a href="$1" target="_blank" style="color:var(--ai);text-decoration:underline;word-break:break-all">$1</a>');
