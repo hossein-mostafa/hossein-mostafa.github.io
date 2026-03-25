@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HM // Portfolio</title>
+<title>HM // System Online</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@300;400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -15,8 +15,8 @@
   --text:#c8dff5;--muted:#3d5a7a;--border:#0e2040;
   --pad:60px;
 }
-html,body{height:100%;margin:0}
-body{background:var(--b);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none;overflow-y:scroll;scroll-snap-type:y mandatory}
+html,body{height:100%;margin:0;background:#040810!important}
+body{background:#040810!important;color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:none;overflow-y:scroll;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch}
 body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.06) 2px,rgba(0,0,0,.06) 4px);pointer-events:none;z-index:9000}
 
 #cur{position:fixed;width:8px;height:8px;background:var(--c);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 12px var(--c);mix-blend-mode:screen}
@@ -251,10 +251,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:16px var(--pad);disp
   :root{--pad:20px}
 
   /* NAV */
-  nav{padding:12px 20px}
+  nav{padding:12px 20px;flex-direction:column;align-items:flex-start;gap:8px}
   .nav-id{font-size:11px}
-  .nav-links{gap:16px}
+  .nav-links{gap:12px;width:100%}
   .nav-links a{font-size:10px}
+
+  /* NEW CAPABILITY badge */
+  .hud{margin-top:32px}
+  .hud>div:last-child{width:100%}
+  .hud>div:last-child>div:first-child{position:relative;top:auto;left:auto;transform:none;margin-bottom:8px;justify-content:center}
 
   /* BOOT */
   #boot-logo{font-size:32px}
@@ -334,7 +339,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:16px var(--pad);disp
 @media(hover:none)and(pointer:coarse){
   body{cursor:auto!important}
   #cur,#cur-ring{display:none!important}
-  a,button,span.cta{cursor:pointer!important}
+  a,button,.cta,.year-btn,.aria-sug{cursor:pointer!important}
+}
+/* Extra safety — show cursor on any device with a real mouse */
+@media(hover:hover)and(pointer:fine){
+  body{cursor:none!important}
+  #cur,#cur-ring{display:block!important}
 }
   .nav-links{gap:10px}
   .nav-links a{font-size:9px;letter-spacing:.06em}
