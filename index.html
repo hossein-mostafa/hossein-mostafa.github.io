@@ -618,7 +618,7 @@ nav{
   <div id="aria-trigger">
     <button id="aria-pill" onclick="toggleAria()">
       <span class="aria-pill-dot"></span>
-      Ask ARIA
+      Ask Bianca
     </button>
     <span id="aria-hint">Hossein's AI assistant</span>
   </div>
@@ -631,13 +631,13 @@ nav{
   <div id="aria-sheet-header">
     <div id="aria-avatar-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2c0 0 .6 6.5 3.1 9C17.6 13.5 22 14 22 14c0 0-4.4.5-6.9 3-2.5 2.5-3.1 9-3.1 9 0 0-.6-6.5-3.1-9-2.5-2.5-6.9-3-6.9-3 0 0 4.4-.5 6.9-3C11.4 8.5 12 2 12 2z"/></svg></div>
     <div id="aria-header-info">
-      <div id="aria-header-name">ARIA</div>
+      <div id="aria-header-name">Bianca</div>
       <div id="aria-header-status">● Online · Ask me anything about Hossein</div>
     </div>
     <button id="aria-close-btn" onclick="closeAria()">✕</button>
   </div>
   <div id="aria-messages">
-    <div class="amsg bot">Hi! I'm <strong>ARIA</strong>, Hossein's AI assistant. Ask me anything about his experience, skills, or availability. 👋</div>
+    <div class="amsg bot">Hi! I'm <strong>Bianca</strong>, Hossein's AI assistant. Ask me anything about his experience, skills, or availability. 👋</div>
   </div>
   <div id="aria-suggs">
     <button class="asugg" onclick="askSugg(this)">What's his experience?</button>
@@ -646,7 +646,7 @@ nav{
     <button class="asugg" onclick="askSugg(this)">Download his CV</button>
   </div>
   <div id="aria-input-row">
-    <input id="aria-input" type="text" placeholder="Message ARIA…" onkeydown="if(event.key==='Enter')sendAria()"/>
+    <input id="aria-input" type="text" placeholder="Message Bianca…" onkeydown="if(event.key==='Enter')sendAria()"/>
     <button id="aria-send" onclick="sendAria()">↑</button>
   </div>
 </div>
@@ -1077,7 +1077,7 @@ async function startCounters(){
 }
 
 // ARIA
-const ARIA_CONTEXT=`You are ARIA, Hossein Mostafa's AI assistant. Answer questions about Hossein concisely (2-4 sentences). No markdown formatting.
+const ARIA_CONTEXT=`You are Bianca, Hossein Mostafa's AI assistant. Answer questions about Hossein concisely (2-4 sentences). No markdown formatting.
 
 PERSONAL: Hossein Mostafa. Location: Berlin, Germany. Open to new opportunities.
 CURRENT ROLE: IT Operations Engineer at Bonial International GmbH, Berlin (2022-Now). Manages 500+ users across Berlin & Paris.
