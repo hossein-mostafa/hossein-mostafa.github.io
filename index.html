@@ -629,7 +629,7 @@ nav{
 <div id="aria-sheet">
   <div id="aria-sheet-handle" onclick="closeAria()"></div>
   <div id="aria-sheet-header">
-    <div id="aria-avatar-wrap">🤖</div>
+    <div id="aria-avatar-wrap"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff"><path d="M12 2c0 0 .6 6.5 3.1 9C17.6 13.5 22 14 22 14c0 0-4.4.5-6.9 3-2.5 2.5-3.1 9-3.1 9 0 0-.6-6.5-3.1-9-2.5-2.5-6.9-3-6.9-3 0 0 4.4-.5 6.9-3C11.4 8.5 12 2 12 2z"/></svg></div>
     <div id="aria-header-info">
       <div id="aria-header-name">ARIA</div>
       <div id="aria-header-status">● Online · Ask me anything about Hossein</div>
@@ -1116,7 +1116,7 @@ async function sendAria(){
   const typing=document.createElement('div');typing.className='amsg bot';typing.innerHTML='<div class="aria-typing"><span></span><span></span><span></span></div>';msgs.appendChild(typing);msgs.scrollTop=msgs.scrollHeight;
   ariaHistory.push({role:'user',content:text});
   try{
-    const res=await fetch('https://aria-proxy.seensteef.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:ARIA_CONTEXT,messages:ariaHistory})});
+    const res=await fetch('https://aria-proxy.seensteef.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-5',max_tokens:1000,system:ARIA_CONTEXT,messages:ariaHistory})});
     const data=await res.json();
     const raw=(data.content?.[0]?.text||"I'm having trouble connecting. Please try again!").replace(/\*\*(.*?)\*\*/g,'$1').replace(/\*(.*?)\*/g,'$1');
     const reply=raw.replace(/(https?:\/\/[^\s]+)/g,'<a href="$1" target="_blank">$1</a>');
