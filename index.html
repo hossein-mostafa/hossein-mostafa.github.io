@@ -85,13 +85,13 @@ nav{
 @keyframes pulse-bg{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1}50%{transform:translate(-50%,-50%) scale(1.12);opacity:.6}}
 
 .hero-kicker{
-  font-size:14px;font-weight:500;color:#6e6e73;letter-spacing:.04em;
-  margin-bottom:24px;opacity:0;animation:rise .7s .2s ease forwards;
+  font-size:21px;font-weight:400;color:#6e6e73;letter-spacing:-.01em;line-height:1.4;
+  margin-bottom:37px;opacity:0;animation:rise .7s .2s ease forwards;
 }
 
 /* NAME TYPEWRITER with glitch */
 .hero-name-wrap{
-  position:relative;margin-bottom:24px;min-height:clamp(120px,22vw,260px);
+  position:relative;margin-bottom:37px;min-height:clamp(120px,22vw,260px);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   opacity:0;animation:rise .7s .35s ease forwards;
 }
@@ -511,12 +511,11 @@ nav{
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg-glow"></div>
-  <p class="hero-kicker">IT Operations Engineer · Agentic AI & Automation</p>
   <div class="hero-name-wrap">
     <span id="hero-tl1" data-t=""></span>
     <span id="hero-tl2"></span>
   </div>
-  <p class="hero-phrase">Cloud-first · AI-native · Human-centered.</p>
+  <p class="hero-phrase">IT Operations Engineer · Agentic AI & Automation</p>
   <div class="hero-btns">
     <button class="btn-outline" onclick="navTo('about')">About Me</button>
     <button class="btn-outline" onclick="navTo('career')">See experience</button>
@@ -548,6 +547,7 @@ nav{
 <!-- ABOUT -->
 <section class="feature" id="about">
   <h2 class="feat-headline reveal">IT Ops meets AI building.</h2>
+  <p class="feat-sub reveal">Cloud-first · AI-native · Human-centered.</p>
   <p class="feat-sub reveal">Managing infrastructure for <b>500+ users</b> across Berlin & Paris. Building fully functional apps with AI, from frontend to production.</p>
   <div class="feat-cards stagger">
     <div class="fcard"><span class="fcard-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><div class="fcard-title">Cloud Infrastructure</div><div class="fcard-body">Azure AD, M365, Google Workspace, Intune, JAMF: <b>complete cloud-first environment</b> across two countries.</div></div>
