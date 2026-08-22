@@ -281,22 +281,12 @@ nav{
 .tc{color:#0071e3}.tw{color:#1d1d1f}.tg{color:#34c759}.tm{color:#6e6e73}.tai{color:#7d5af1}.ty{color:#ff9f0a}
 
 /* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%;max-width:1000px;text-align:left}
-.skills-grid .scard{position:relative;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:28px 24px;transition:transform .2s,box-shadow .2s;transition-delay:0s !important;}
-.scard:hover{box-shadow:0 16px 48px rgba(0,0,0,.14);z-index:5;transition-delay:0s !important}
-.scard.ai{border-color:rgba(0,113,227,.25);background:linear-gradient(135deg,#fff,#f0f5ff)}
-.scard.core{border-color:rgba(13,138,95,.25);background:linear-gradient(135deg,#fff,#effaf5)}
-.scard-name{font-size:15px;font-weight:700;color:#1d1d1f;margin-bottom:12px;letter-spacing:-.02em}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:56px;row-gap:40px;width:100%;max-width:1040px;text-align:left}
+.skills-grid .scard{padding-bottom:28px;border-bottom:1px solid rgba(0,0,0,.08);transition:border-color .2s}
+.scard-name{font-size:18px;font-weight:700;color:#1d1d1f;margin-bottom:10px;letter-spacing:-.01em}
 .scard.ai .scard-name{color:#0071e3}
 .scard.core .scard-name{color:#0d8a5f}
-.scard-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;min-height:62px;align-content:flex-start}
-.scard-pill{font-size:11px;color:#6e6e73;background:#f5f5f7;border-radius:980px;padding:4px 12px;font-weight:500}
-.scard.ai .scard-pill{background:#e8f0fb;color:#0071e3}
-.scard.core .scard-pill{background:#e3f5ec;color:#0d8a5f}
-.scard-bar{height:3px;background:#e8e8ed;border-radius:2px;overflow:hidden}
-.scard-fill{height:100%;border-radius:2px;background:#c7c7cc;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
-.scard.ai .scard-fill{background:linear-gradient(90deg,#7d5af1,#0071e3)}
-.scard.core .scard-fill{background:linear-gradient(90deg,#34c78a,#0d8a5f)}
+.scard-pills{font-size:14px;color:#8e8e93;line-height:1.65}
 
 /* WINS */
 .wins-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;width:100%;max-width:800px;text-align:left}
@@ -552,21 +542,17 @@ body.dark-mode .exp-meta{color:#9a9aa0}
 body.dark-mode .exp-meta b{color:#e8e8ea}
 body.dark-mode .exp-brief{color:#c0c0c5;border-bottom-color:rgba(255,255,255,.08)}
 body.dark-mode .exp-bullet{color:#c0c0c5}
+body.dark-mode .exp-recent-line{color:#c0c0c5}
 body.dark-mode .exp-block-title{color:#7a7a82}
 body.dark-mode .exp-metric-label{color:#c0c0c5}
 body.dark-mode .exp-metric-bar{background:#2a2d32}
 body.dark-mode .exp-metric-pct{color:#9a9aa0}
 body.dark-mode .exp-chip{background:#2a2d32;color:#c0c0c5}
-body.dark-mode .skills-grid .scard{background:#1d2024;border-color:rgba(255,255,255,.08)}
+body.dark-mode .skills-grid .scard{border-bottom-color:rgba(255,255,255,.1)}
 body.dark-mode .scard-name{color:#e8e8ea}
-body.dark-mode .scard-pill{background:#2a2d32;color:#9a9aa0}
-body.dark-mode .scard-bar{background:#2a2d32}
-body.dark-mode .scard.ai{background:linear-gradient(135deg,#1d2024,#1a1f30);border-color:rgba(125,90,241,.3)}
+body.dark-mode .scard-pills{color:#8a8a92}
 body.dark-mode .scard.ai .scard-name{color:#8ab4f8}
-body.dark-mode .scard.ai .scard-pill{background:#20263d;color:#8ab4f8}
-body.dark-mode .scard.core{background:linear-gradient(135deg,#1d2024,#152420);border-color:rgba(13,138,95,.3)}
 body.dark-mode .scard.core .scard-name{color:#5fd6a8}
-body.dark-mode .scard.core .scard-pill{background:#173229;color:#5fd6a8}
 body.dark-mode .wins-grid .wcard{background:#1d2024}
 body.dark-mode .wcard-num{color:#f0f0f2}
 body.dark-mode .wcard-title{color:#e8e8ea}
@@ -628,7 +614,7 @@ body.dark-mode .wcard-num-of5{color:#7a7a82}
       <div class="hstat-top slot-bottom">Years Online</div>
     </div>
     <div class="hstat">
-      <div class="hstat-l slot-top">2 countries</div>
+      <div class="hstat-l slot-top">Across 2 Countries</div>
       <div class="hstat-n" id="stat-users" style="opacity:0"><span class="counter" data-t="500">0</span>+</div>
       <div class="hstat-top slot-bottom">Users Managed</div>
     </div>
@@ -1087,23 +1073,23 @@ if(termEl2)termObs.observe(termEl2);
 
 // SKILLS
 const skills=[
-  {name:'AI Tools & Dev',pills:['Claude AI','Cursor IDE','n8n','Opal','Perplexity','ChatGPT'],pct:88,ai:true},
-  {name:'Development',pills:['Node.js','SQL','REST APIs','Frontend','Backend','Deploy'],pct:78,ai:true},
-  {name:'AI-Augmented IT',pills:['AI Scripting','Prompt Engineering','Workflow Automation'],pct:85,ai:true},
+  {name:'AI Tools & Dev',pills:['Claude AI','Cursor IDE','n8n','Opal','Perplexity','ChatGPT','Gemini','Copilot','Rovo'],pct:88,ai:true},
+  {name:'Development',pills:['Node.js','SQL','REST APIs','Frontend','Backend','Deploy','Google Apps Script','GitHub Actions'],pct:78,ai:true},
+  {name:'AI-Augmented IT',pills:['AI Scripting','Prompt Engineering','Workflow Automation','Intelligent Ticketing','AI Documentation'],pct:85,ai:true},
   {name:'Cloud & Identity',pills:['M365','Azure AD','Google Workspace','Adaxes','SSO/SAML','MFA'],pct:92,core:true},
   {name:'Security & IAM',pills:['Active Directory','MS Defender','Sophos','1Password','Cisco Meraki'],pct:85,core:true},
   {name:'Endpoint Mgmt',pills:['Intune','JAMF Pro','SCCM','Apple Business Mgr','GLPI'],pct:88,core:true},
   {name:'Mobile Device Mgmt',pills:['iOS','Android','Apple Business Mgr','Conditional Access','Device Compliance'],pct:86},
   {name:'Identity Automation',pills:['Adaxes Workflows','User Lifecycle','Auto-Provisioning','Role-Based Access'],pct:91},
-  {name:'IT Ops & Support',pills:['Jira','Confluence','PowerShell','Asset Tracking'],pct:95},
-  {name:'Collaboration & Comms',pills:['Microsoft Teams','Exchange','SharePoint','Slack','Google Meet'],pct:90},
-  {name:'Vendor & Asset Mgmt',pills:['Procurement','SLA Management','License Mgmt','GLPI'],pct:85},
-  {name:'Hardware & AV',pills:['Logitech Systems','Airtame','Meeting Rooms','Printers'],pct:87},
+  {name:'IT Ops & Support',pills:['Jira','Confluence','PowerShell','Asset Tracking','Remote & Onsite Support','1st–3rd Line Support'],pct:95},
+  {name:'Collaboration & Comms',pills:['Microsoft Teams','Exchange','SharePoint','Slack','Google Meet','Zoom'],pct:90},
+  {name:'Vendor & Asset Mgmt',pills:['Procurement','SLA Management','License Mgmt','GLPI','Vendor Relations','1Password SaaS Manager'],pct:85},
+  {name:'Hardware & AV',pills:['Logitech Systems','Airtame','Meeting Rooms','Printers','AV Setup','Device Lifecycle'],pct:87},
 ];
 function makeScard(s){
   const el=document.createElement('div');
   el.className='scard'+(s.ai?' ai':'')+(s.core?' core':'');
-  el.innerHTML=`<div class="scard-name">${s.name}</div><div class="scard-pills">${s.pills.map(p=>`<span class="scard-pill">${p}</span>`).join('')}</div><div class="scard-bar"><div class="scard-fill" data-w="${s.pct}"></div></div>`;
+  el.innerHTML=`<div class="scard-name">${s.name}</div><div class="scard-pills">${s.pills.join(', ')}</div>`;
   return el;
 }
 const sg=document.getElementById('skills-grid');
@@ -1115,7 +1101,6 @@ const io=new IntersectionObserver(entries=>{
     if(!e.isIntersecting)return;
     e.target.classList.add('in');
     if(e.target.classList.contains('exp-wrap')&&typeof fillExpBars==='function')fillExpBars();
-    e.target.querySelectorAll('.scard-fill').forEach(f=>f.style.width=f.dataset.w+'%');
     e.target.querySelectorAll('.ach-count').forEach(el=>{
       const t=+el.dataset.count,s=el.dataset.suffix||'',dur=1600;let st=null;
       const tick=ts=>{if(!st)st=ts;const p=Math.min((ts-st)/dur,1);el.textContent=Math.floor(p*t)+s;if(p<1)requestAnimationFrame(tick);else el.textContent=t+s;};
