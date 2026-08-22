@@ -197,6 +197,11 @@ nav{
   0%,100%{box-shadow:0 4px 24px rgba(0,0,0,.2),0 0 0 0 rgba(13,27,46,.35)}
   50%{box-shadow:0 4px 24px rgba(0,0,0,.2),0 0 0 9px rgba(13,27,46,0)}
 }
+@keyframes exp-pulse-dark{
+  0%,100%{box-shadow:0 4px 24px rgba(0,0,0,.4),0 0 0 0 rgba(138,180,248,.45)}
+  50%{box-shadow:0 4px 24px rgba(0,0,0,.4),0 0 0 9px rgba(138,180,248,0)}
+}
+body.dark-mode #exp-easter-btn.show{animation-name:exp-pulse-dark}
 .exp-nav-btn{margin-top:0;font-size:13px;padding:9px 18px}
 .exp-nav-btn:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
 .bio-btn svg{transition:transform .3s}
@@ -286,6 +291,7 @@ nav{
 .scard-name{font-size:18px;font-weight:700;color:#1d1d1f;margin-bottom:10px;letter-spacing:-.01em}
 .scard.ai .scard-name{color:#0071e3}
 .scard.core .scard-name{color:#0d8a5f}
+.scard.ops .scard-name{color:#d97706}
 .scard-pills{font-size:14px;color:#8e8e93;line-height:1.65}
 
 /* WINS */
@@ -553,6 +559,7 @@ body.dark-mode .scard-name{color:#e8e8ea}
 body.dark-mode .scard-pills{color:#8a8a92}
 body.dark-mode .scard.ai .scard-name{color:#8ab4f8}
 body.dark-mode .scard.core .scard-name{color:#5fd6a8}
+body.dark-mode .scard.ops .scard-name{color:#ffb454}
 body.dark-mode .wins-grid .wcard{background:#1d2024}
 body.dark-mode .wcard-num{color:#f0f0f2}
 body.dark-mode .wcard-title{color:#e8e8ea}
@@ -637,7 +644,7 @@ body.dark-mode .wcard-num-of5{color:#7a7a82}
   <p class="feat-sub feat-tagline reveal">Cloud-first · AI-native · Human-centered.</p>
   <p class="feat-sub reveal">Managing infrastructure for <b>500+ users</b> across Berlin & Paris. Building fully functional apps with AI, from frontend to production.</p>
   <div class="feat-cards stagger">
-    <div class="fcard"><span class="fcard-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><div class="fcard-title">Cloud Infrastructure</div><div class="fcard-body">Azure AD, M365, Google Workspace, Intune, JAMF: <b>complete cloud-first environment</b> across two countries.</div></div>
+    <div class="fcard"><span class="fcard-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><div class="fcard-title">Cloud Infrastructure</div><div class="fcard-body">Azure AD, Microsoft 365, Google Workspace, Intune, JAMF: <b>complete cloud-first environment</b> across two countries.</div></div>
     <div class="fcard"><span class="fcard-icon icon-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></span><div class="fcard-title">AI-Native Builder</div><div class="fcard-body">Building <b>production-ready apps</b> with Claude AI, Cursor IDE and n8n: frontend to backend, SQL, deployment and hosting.</div></div>
     <div class="fcard"><span class="fcard-icon icon-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="fcard-title">Security & Identity</div><div class="fcard-body">Deep expertise in <b>IAM, SSO, MFA, SAML</b> and endpoint security. Secure without friction.</div></div>
   </div>
@@ -1073,22 +1080,22 @@ if(termEl2)termObs.observe(termEl2);
 
 // SKILLS
 const skills=[
-  {name:'AI Tools & Dev',pills:['Claude AI','Cursor IDE','n8n','Opal','Perplexity','ChatGPT','Gemini','Copilot','Rovo'],pct:88,ai:true},
-  {name:'Development',pills:['Node.js','SQL','REST APIs','Frontend','Backend','Deploy','Google Apps Script','GitHub Actions'],pct:78,ai:true},
+  {name:'AI Tools & Dev',pills:['Claude AI','Cursor IDE','n8n','Opal','Perplexity','ChatGPT','Gemini','Copilot','Rovo','ElevenLabs','Google Flow'],pct:88,ai:true},
+  {name:'Development',pills:['Node.js','SQL','REST APIs','Frontend','Backend','Deploy','Google Apps Script','GitHub Actions','GitHub','Vercel','Supabase'],pct:78,ai:true},
   {name:'AI-Augmented IT',pills:['AI Scripting','Prompt Engineering','Workflow Automation','Intelligent Ticketing','AI Documentation'],pct:85,ai:true},
-  {name:'Cloud & Identity',pills:['M365','Azure AD','Google Workspace','Adaxes','SSO/SAML','MFA'],pct:92,core:true},
+  {name:'Cloud & Identity',pills:['Microsoft 365','Azure AD','Google Workspace','Adaxes','SSO/SAML','MFA'],pct:92,core:true},
   {name:'Security & IAM',pills:['Active Directory','MS Defender','Sophos','1Password','Cisco Meraki'],pct:85,core:true},
   {name:'Endpoint Mgmt',pills:['Intune','JAMF Pro','SCCM','Apple Business Mgr','GLPI'],pct:88,core:true},
-  {name:'Mobile Device Mgmt',pills:['iOS','Android','Apple Business Mgr','Conditional Access','Device Compliance'],pct:86},
-  {name:'Identity Automation',pills:['Adaxes Workflows','User Lifecycle','Auto-Provisioning','Role-Based Access'],pct:91},
-  {name:'IT Ops & Support',pills:['Jira','Confluence','PowerShell','Asset Tracking','Remote & Onsite Support','1st–3rd Line Support'],pct:95},
+  {name:'Mobile Device Mgmt',pills:['iOS','Android','Apple Business Mgr','Conditional Access','Device Compliance'],pct:86,ops:true},
+  {name:'Identity Automation',pills:['Adaxes Workflows','User Lifecycle','Auto-Provisioning','Role-Based Access'],pct:91,ops:true},
+  {name:'IT Ops & Support',pills:['Jira','Confluence','PowerShell','Asset Tracking','Remote & Onsite Support','1st–3rd Line Support'],pct:95,ops:true},
   {name:'Collaboration & Comms',pills:['Microsoft Teams','Exchange','SharePoint','Slack','Google Meet','Zoom'],pct:90},
   {name:'Vendor & Asset Mgmt',pills:['Procurement','SLA Management','License Mgmt','GLPI','Vendor Relations','1Password SaaS Manager'],pct:85},
   {name:'Hardware & AV',pills:['Logitech Systems','Airtame','Meeting Rooms','Printers','AV Setup','Device Lifecycle'],pct:87},
 ];
 function makeScard(s){
   const el=document.createElement('div');
-  el.className='scard'+(s.ai?' ai':'')+(s.core?' core':'');
+  el.className='scard'+(s.ai?' ai':'')+(s.core?' core':'')+(s.ops?' ops':'');
   el.innerHTML=`<div class="scard-name">${s.name}</div><div class="scard-pills">${s.pills.join(', ')}</div>`;
   return el;
 }
@@ -1194,7 +1201,7 @@ const ARIA_CONTEXT=`You are Bianca, Hossein Mostafa's AI assistant. Answer quest
 PERSONAL: Hossein Mostafa. Location: Berlin, Germany. Open to new opportunities.
 CURRENT ROLE: IT Operations Engineer at Bonial International GmbH, Berlin (2022-Now). Manages 500+ users across Berlin & Paris.
 EXPERIENCE: 20+ years. IT Administrator Fouad Baayno (2019-2022), IT Coordinator Baroody Group (2016-2019), Sr. IT Specialist & Financial Controller Harb Electric (2010-2016), IT Support Technician Computer Doctor (2005-2010).
-SKILLS: M365, Azure AD, Google Workspace, Adaxes, SSO/SAML, MFA, Intune, JAMF Pro, SCCM, Active Directory, MS Defender, Sophos, 1Password, Cisco Meraki, Jira, PowerShell.
+SKILLS: Microsoft 365, Azure AD, Google Workspace, Adaxes, SSO/SAML, MFA, Intune, JAMF Pro, SCCM, Active Directory, MS Defender, Sophos, 1Password, Cisco Meraki, Jira, PowerShell.
 AI & DEV: Builds full-stack apps using Claude AI, Cursor IDE, Node.js, n8n, Opal, Perplexity. SQL databases, frontend, backend, deployment and hosting.
 ACHIEVEMENTS: 10x faster onboarding via automation. 60% storage reduction via SharePoint migration. 4.94/5 satisfaction rating with 1000+ tickets/year.
 LANGUAGES: Arabic (Native), English (Fluent), French (Basic), German (Basic).
