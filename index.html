@@ -43,6 +43,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#1d1d1f;over
 @keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(0,113,227,.3)}50%{box-shadow:0 0 0 12px rgba(0,113,227,.0)}}
 #boot-enter-hint{font-size:12px;color:#6e6e73;margin-top:10px;letter-spacing:.02em}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.boot-theme-toggle{margin-bottom:20px}
 
 /* ── NAV ── */
 nav{
@@ -60,12 +61,21 @@ nav{
 .nav-logo-cursor.show{opacity:1;animation:blink .7s infinite}
 .nav-links{display:flex;gap:32px}
 .nav-right{display:flex;align-items:center;gap:32px}
+.theme-toggle{
+  width:36px;height:36px;border-radius:50%;border:1px solid rgba(0,0,0,.1);
+  background:transparent;color:#1d1d1f;cursor:pointer;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s,border-color .2s;
+}
+.theme-toggle svg{width:18px;height:18px}
+.theme-toggle:hover{background:rgba(0,0,0,.05);transform:scale(1.08)}
 .nav-links a{font-size:14px;color:#6e6e73;text-decoration:none;font-weight:500;letter-spacing:.04em;transition:color .2s,transform .2s;cursor:pointer;display:inline-block}
 .nav-links a:hover{color:#1d1d1f;transform:scale(1.08);-webkit-text-stroke:.4px currentColor}
 .nav-cta{
   font-size:13px;color:#fff;background:#0d1b2e;
-  padding:8px 18px;border-radius:980px;
+  padding:8px 18px;border-radius:980px;text-align:center;
   text-decoration:none;font-weight:500;transition:background .2s,transform .2s,box-shadow .2s;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
 }
 .nav-cta:hover{background:#16283f;transform:scale(1.04);box-shadow:0 8px 32px rgba(0,0,0,.3)}
 
@@ -157,6 +167,8 @@ nav{
 .feat-label{font-size:12px;font-weight:600;color:#0071e3;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
 .feat-headline{font-size:clamp(36px,7vw,80px);font-weight:800;color:#1d1d1f;letter-spacing:-.05em;line-height:.95;max-width:860px;margin-bottom:16px}
 .feat-sub{font-size:clamp(16px,2vw,20px);font-weight:300;color:#6e6e73;max-width:560px;line-height:1.55;margin-bottom:56px}
+#about .feat-headline{margin-bottom:24px}
+.feat-tagline{margin-bottom:24px}
 .feat-sub b{color:#1d1d1f;font-weight:600}
 
 /* ABOUT CARDS */
@@ -431,7 +443,7 @@ nav{
 }
 #aria-input{
   flex:1;background:#f5f5f7;border:none;border-radius:980px;
-  color:#1d1d1f;font-family:'Inter',sans-serif;font-size:15px;
+  color:#1d1d1f;font-family:'Inter',sans-serif;font-size:16px;
   padding:10px 16px;outline:none;
 }
 #aria-input::placeholder{color:#b0b0b5}
@@ -466,8 +478,10 @@ nav{
   .skills-grid{grid-template-columns:1fr 1fr}
   .wins-grid{grid-template-columns:1fr}
   .connect-grid{grid-template-columns:1fr 1fr}
-  .hero-stats{flex-direction:column;width:100%}
-  .hstat{border-right:none;border-bottom:1px solid rgba(0,0,0,.08);padding:20px 24px}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:0;border:1px solid rgba(0,0,0,.08);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+  .hstat{border:none;border-radius:0;background:transparent;padding:20px 16px;width:100%;height:auto;aspect-ratio:1/1}
+  .hstat:nth-child(odd){border-right:1px solid rgba(0,0,0,.08)}
+  .hstat:nth-child(-n+2){border-bottom:1px solid rgba(0,0,0,.08)}
   .hstat:last-child{border-bottom:none}
   #connect{padding:100px 20px}
   .exp-wrap{flex-direction:column;gap:28px}
@@ -479,12 +493,95 @@ nav{
   .connect-grid{grid-template-columns:1fr}
   #aria-sheet{height:88vh}
 }
+/* DARK MODE */
+body.dark-mode{background:#15171a;color:#e8e8ea}
+body.dark-mode #hero{background:#15171a}
+body.dark-mode #boot{background:#15171a}
+body.dark-mode #boot-logo{color:#f0f0f2}
+body.dark-mode #boot-lines{color:#9a9aa0}
+body.dark-mode #boot-prog-wrap{background:#2a2d32}
+body.dark-mode #boot-enter-hint{color:#7a7a82}
+body.dark-mode .boot-theme-toggle{border-color:rgba(255,255,255,.15);color:#e8e8ea}
+body.dark-mode .boot-theme-toggle:hover{background:rgba(255,255,255,.08)}
+body.dark-mode #aria-sheet{background:#1a1c20}
+body.dark-mode #aria-sheet-header{border-bottom-color:rgba(255,255,255,.08)}
+body.dark-mode #aria-header-name{color:#f0f0f2}
+body.dark-mode #aria-close-btn{background:#2a2d32;color:#c0c0c5}
+body.dark-mode #aria-close-btn:hover{background:#34383e}
+body.dark-mode #aria-sheet-handle{background:#3a3d42}
+body.dark-mode .amsg.bot{background:#26292e;color:#e8e8ea}
+body.dark-mode .asugg{background:#20263d;color:#8ab4f8;border-color:rgba(138,180,248,.25)}
+body.dark-mode .asugg:hover{background:#28304a}
+body.dark-mode #aria-input-row{border-top-color:rgba(255,255,255,.08);background:#1a1c20}
+body.dark-mode #aria-input{background:#26292e;color:#e8e8ea}
+body.dark-mode #aria-input::placeholder{color:#6a6a72}
+body.dark-mode nav{background:rgba(21,23,26,.85);border-bottom-color:rgba(255,255,255,.08)}
+body.dark-mode .nav-logo,body.dark-mode .nav-logo-cursor{color:#e8e8ea}
+body.dark-mode .nav-links a{color:#9a9aa0}
+body.dark-mode .nav-links a:hover{color:#fff}
+body.dark-mode .theme-toggle{border-color:rgba(255,255,255,.15);color:#e8e8ea}
+body.dark-mode .theme-toggle:hover{background:rgba(255,255,255,.08)}
+body.dark-mode #hero-tl1{color:#f0f0f2}
+body.dark-mode .hero-kicker,body.dark-mode .hero-phrase{color:#9a9aa0}
+body.dark-mode .btn-outline{border-color:#3d8bef;color:#5a9cf5}
+body.dark-mode .btn-outline:hover{background:#3d8bef;color:#fff}
+body.dark-mode .hero-stats{background:#1d2024;border-color:rgba(255,255,255,.08)}
+body.dark-mode .hstat{border-color:rgba(255,255,255,.08)}
+body.dark-mode .hstat-n{color:#f0f0f2}
+body.dark-mode .hstat-top{color:#7a7a82}
+body.dark-mode .hstat-l{color:#9a9aa0}
+body.dark-mode .feature{background:#15171a;border-bottom-color:rgba(255,255,255,.06)}
+body.dark-mode .feature.alt{background:#1a1c20}
+body.dark-mode .feat-headline{color:#f0f0f2}
+body.dark-mode .feat-sub{color:#9a9aa0}
+body.dark-mode .feat-sub b{color:#e8e8ea}
+body.dark-mode .fcard{background:#1d2024;border-color:rgba(255,255,255,.08)}
+body.dark-mode .fcard-title{color:#f0f0f2}
+body.dark-mode .fcard-body{color:#9a9aa0}
+body.dark-mode .fcard-body b{color:#e8e8ea}
+body.dark-mode .bio-btn{border-color:#3d8bef;color:#5a9cf5}
+body.dark-mode .bio-btn:hover{background:#3d8bef;color:#fff}
+body.dark-mode .bio-panel p{color:#c0c0c5}
+body.dark-mode .exp-year-role{color:#7a7a82}
+body.dark-mode .exp-year-period{color:#5a5a62}
+body.dark-mode .exp-year.active .exp-year-role{color:#f0f0f2}
+body.dark-mode .exp-rail::before{background:rgba(255,255,255,.12)}
+body.dark-mode .exp-year::before{background:#1d2024;border-color:rgba(255,255,255,.2)}
+body.dark-mode .exp-role{color:#f0f0f2}
+body.dark-mode .exp-meta{color:#9a9aa0}
+body.dark-mode .exp-meta b{color:#e8e8ea}
+body.dark-mode .exp-brief{color:#c0c0c5;border-bottom-color:rgba(255,255,255,.08)}
+body.dark-mode .exp-bullet{color:#c0c0c5}
+body.dark-mode .exp-block-title{color:#7a7a82}
+body.dark-mode .exp-metric-label{color:#c0c0c5}
+body.dark-mode .exp-metric-bar{background:#2a2d32}
+body.dark-mode .exp-metric-pct{color:#9a9aa0}
+body.dark-mode .exp-chip{background:#2a2d32;color:#c0c0c5}
+body.dark-mode .skills-grid .scard{background:#1d2024;border-color:rgba(255,255,255,.08)}
+body.dark-mode .scard-name{color:#e8e8ea}
+body.dark-mode .scard-pill{background:#2a2d32;color:#9a9aa0}
+body.dark-mode .scard-bar{background:#2a2d32}
+body.dark-mode .scard.ai{background:linear-gradient(135deg,#1d2024,#1a1f30);border-color:rgba(125,90,241,.3)}
+body.dark-mode .scard.ai .scard-name{color:#8ab4f8}
+body.dark-mode .scard.ai .scard-pill{background:#20263d;color:#8ab4f8}
+body.dark-mode .scard.core{background:linear-gradient(135deg,#1d2024,#152420);border-color:rgba(13,138,95,.3)}
+body.dark-mode .scard.core .scard-name{color:#5fd6a8}
+body.dark-mode .scard.core .scard-pill{background:#173229;color:#5fd6a8}
+body.dark-mode .wins-grid .wcard{background:#1d2024}
+body.dark-mode .wcard-num{color:#f0f0f2}
+body.dark-mode .wcard-title{color:#e8e8ea}
+body.dark-mode .wcard-desc{color:#9a9aa0}
+body.dark-mode .wcard-num-of5{color:#7a7a82}
 </style>
 </head>
-<body>
+<body style="overflow:hidden">
 
 <!-- BOOT -->
 <div id="boot">
+  <button class="theme-toggle boot-theme-toggle" id="boot-theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <svg id="boot-theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg id="boot-theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
   <div id="boot-logo">HM</div>
   <div id="boot-lines"></div>
   <div id="boot-prog-wrap"><div id="boot-prog"></div></div>
@@ -504,6 +601,10 @@ nav{
       <a onclick="navTo('skills')">Skills</a>
       <a onclick="navTo('wins')">Impact</a>
     </div>
+    <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <a class="nav-cta" onclick="navTo('connect')">Get in touch</a>
   </div>
 </nav>
@@ -547,7 +648,7 @@ nav{
 <!-- ABOUT -->
 <section class="feature" id="about">
   <h2 class="feat-headline reveal">IT Ops meets AI building.</h2>
-  <p class="feat-sub reveal">Cloud-first · AI-native · Human-centered.</p>
+  <p class="feat-sub feat-tagline reveal">Cloud-first · AI-native · Human-centered.</p>
   <p class="feat-sub reveal">Managing infrastructure for <b>500+ users</b> across Berlin & Paris. Building fully functional apps with AI, from frontend to production.</p>
   <div class="feat-cards stagger">
     <div class="fcard"><span class="fcard-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><div class="fcard-title">Cloud Infrastructure</div><div class="fcard-body">Azure AD, M365, Google Workspace, Intune, JAMF: <b>complete cloud-first environment</b> across two countries.</div></div>
@@ -605,7 +706,7 @@ nav{
     <button class="citem" onclick="window.open('mailto:hossein.a.mostafa@gmail.com')"><div class="citem-val">hossein.a.mostafa@gmail.com</div></button>
     <button class="citem" onclick="window.open('tel:+4915151535123')"><div class="citem-val">+49 151 515 35123</div></button>
     <button class="citem" onclick="window.open('https://www.linkedin.com/in/seensteef','_blank')"><div class="citem-val">LinkedIn</div></button>
-    <button class="citem" onclick="window.open('https://drive.google.com/file/d/1YCH3MjNK0-brLfxigxid2gOu4HnAMdeZ/view','_blank')"><div class="citem-val">Download CV</div></button>
+    <button class="citem" onclick="window.open('https://drive.google.com/file/d/1qFtJnyKjCPh4hBEt1AHG3YWRJNyg4VBD/view','_blank')"><div class="citem-val">Download CV</div></button>
   </div>
   <p class="connect-footer reveal">Bachelor of Science, Computer Management & Business Administration · Lebanese University</p>
 </section>
@@ -654,6 +755,31 @@ nav{
 <script>
 // NAV SCROLL: renamed to avoid conflict with browser scrollTo
 function navTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+
+// THEME TOGGLE
+function updateThemeIcons(isDark){
+  const sun=document.getElementById('theme-icon-sun');
+  const moon=document.getElementById('theme-icon-moon');
+  if(sun)sun.style.display=isDark?'':'none';
+  if(moon)moon.style.display=isDark?'none':'';
+  const bootSun=document.getElementById('boot-theme-icon-sun');
+  const bootMoon=document.getElementById('boot-theme-icon-moon');
+  if(bootSun)bootSun.style.display=isDark?'':'none';
+  if(bootMoon)bootMoon.style.display=isDark?'none':'';
+}
+function toggleTheme(){
+  const isDark=document.body.classList.toggle('dark-mode');
+  updateThemeIcons(isDark);
+  try{localStorage.setItem('portfolio-theme',isDark?'dark':'light');}catch(e){}
+}
+(function initTheme(){
+  let saved=null;
+  try{saved=localStorage.getItem('portfolio-theme');}catch(e){}
+  if(saved==='dark'){
+    document.body.classList.add('dark-mode');
+    updateThemeIcons(true);
+  }
+})();
 
 // NAV LOGO TYPEWRITER (paused while hero is in view, resumes once scrolled past it)
 const navPhases=['Hossein MOSTAFA','IT Operations Engineer','Agentic AI & Automation'];
@@ -771,6 +897,7 @@ function launchPortfolio(){
   portfolioLaunched=true;
   const b=document.getElementById('boot');
   b.style.transition='opacity .7s';b.style.opacity='0';
+  document.body.style.overflow='';
   setTimeout(()=>{b.style.display='none';startCounters();},700);
 }
 
@@ -1088,7 +1215,7 @@ ACHIEVEMENTS: 10x faster onboarding via automation. 60% storage reduction via Sh
 LANGUAGES: Arabic (Native), English (Fluent), French (Basic), German (Basic).
 EDUCATION: BSc Business Administration & Computer Management, Lebanese University, 2002-2005.
 CONTACT: Email: hossein.a.mostafa@gmail.com. Phone: +49 151 515 35123. LinkedIn: https://www.linkedin.com/in/seensteef
-CV: https://drive.google.com/file/d/1YCH3MjNK0-brLfxigxid2gOu4HnAMdeZ/view?usp=drivesdk`;
+CV: https://drive.google.com/file/d/1qFtJnyKjCPh4hBEt1AHG3YWRJNyg4VBD/view?usp=drivesdk`;
 
 let ariaOpen=false,ariaHistory=[];
 function toggleAria(){ariaOpen?closeAria():openAria();}
